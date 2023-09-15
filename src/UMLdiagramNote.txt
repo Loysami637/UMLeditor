@@ -1,0 +1,69 @@
+UseCase A.1 Creating an UML object
+    User click Button "class" or Button "use case"
+        Button becomes dark, change to "class" mode or "use case" mode
+    loop until mode be change(User click other mode Button)
+        User press mosue in canva, check (x,y) is inside
+        if inside 
+            Release mouse, Creating object
+
+UseCase B.1 Creating connection Line
+    User click Button "xxx line"
+        Button becomes dark, change to "xxx line" mode 
+    loop until mode be change
+        User press mouse in the region of an BASIC OBJECT
+            *check (x,y) is inside
+            determine which port to connect and return the nearest port
+        loop until user release mouse
+            drag, keep drawing line 
+        User release mouse 
+            *check (x,y) is in the region of other object
+            Creating a xxxLine 
+        line14, 19: if not outside, continue the loop, draw nothing
+
+UseCase C.1 Select/Unselect a single object
+    User click button "Select"
+        Button becomes dark, change to "Select" mode
+    Loop until mode be change
+        User press mouse
+            check (x,y) is inside the object
+            change other selected objects to unselect
+        show Ports of the selected object
+    
+UseCase C.2 Select/Unselect a group of objects
+    User click button "Select" 
+        Button becomes dark, change to "Select" mode
+    Loop until mode be change
+        User press mouse
+            and (x,y) is not inside any object region
+            change other selected objects to unselect
+        User drag to (x2,y2)
+        User release mouse
+        Select all objects which is completely in the region
+
+UseCase D.1 Group objects
+    User click MenuBar "Edit"
+    User click "Group"
+    Combine all seleted objects to a Composite object
+
+UseCase D.2 Ungroup objects
+    User click MenuBar "Edit"
+    if only one Composite object is selected
+    decomposite one level this compositie object
+
+UseCase E.1 Move objects
+    User click button "Select" 
+        Button becomes dark, change to "Select" mode
+    Loop until mode be change
+        User press mouse, (x,y) is in the region of an object(the greatest depth)
+        drag (redraw every object and connected lines)
+        until User release mouse (move to (x2,y2))
+
+UseCase F.1 Change Object name
+    User click MenuBar "Edit"
+    User click "change object name"
+        if only one basic object seleted
+    Creating new pop-out window
+    User enter new object name and click "ok"
+        Or User click "cancel", destory the pop-out window
+    Change object name
+    destory the pop-out window
